@@ -1,25 +1,23 @@
 package KlinikPasien;
 
 public class Node {
-    private String nama;
-    private String alamat;
-    private String noTelp;
-    private String keluhan;
-    private Node next;
-    private Node prev;
-    private Node head;
-    private Node tail;
-    private int noAntrian;
-    private int noAntrianAwal;
-    private int noAntrianAkhir;
-    private int noAntrianSementara;
+    private Pasien data;
+	private Node next;
 
-    public Node(String nama, String alamat, String noTelp, String keluhan) {
-        this.nama = nama;
-        this.alamat = alamat;
-        this.noTelp = noTelp;
-        this.keluhan = keluhan;
-        this.next = null;
-        this.prev = null;
-    }
+	public Node(Pasien data) {
+		this.data = data;
+	}
+	public void setData(Pasien data) {
+		this.data = data;
+	}
+	public Pasien getData() {
+		return data;
+	}
+	public void setNext(Node next) {
+		this.next = next;
+	}
+	public Node getNext() {
+		return next;
+	}
+
 }
