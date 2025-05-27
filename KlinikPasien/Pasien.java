@@ -13,7 +13,7 @@ public class Pasien {
         this.noAntrian = noAntrian;
         this.nama = nama;
         this.jenisKelamin = jenisKelamin;
-        this.usia = usia;
+         this.usia = usia;
         this.alamat = alamat;
         this.keluhan = keluhan; 
         this.statusPasien = statusPasien;
