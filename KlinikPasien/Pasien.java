@@ -1,7 +1,7 @@
 package KlinikPasien;
 
 public class Pasien {
-    private int noAntrian;
+    private int id;
     private String nama;
     private String jenisKelamin;
     private int usia;
@@ -18,15 +18,12 @@ public class Pasien {
         this.statusPasien = statusPasien;
 
     }
-
-    public int getNoAntrian() {
-        return noAntrian;
+    public int getId() {
+        return id;
     }
-
-    public void setNoAntrian(int noAntrian) {
-        this.noAntrian = noAntrian;
+    public void setId(int id) {
+        this.id = id;
     }
-
     public String getNama() {
         return nama;
     }
