@@ -1,5 +1,9 @@
 package KlinikPasien;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class ListPasien {
     Node HEAD;
 
@@ -11,6 +15,24 @@ public class ListPasien {
         }
     }
 
+    public void simpanKeFile(Pasien p) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("pasien.txt", true))) {
+            // format penulisan data pasien: dipisah koma
+            String data = p.getId() + "," +
+                    p.getNama() + "," +
+                    p.getJenisKelamin() + "," +
+                    p.getUsia() + "," +
+                    p.getAlamat() + "," +
+                    p.getKeluhan() + "," +
+                    p.getStatusPasien();
+
+            bw.write(data);
+            bw.newLine(); // tambahkan baris baru
+        } catch (IOException e) {
+            System.out.println("Gagal menyimpan ke file: " + e.getMessage());
+        }
+    }
+
     public void addHead(Pasien data) {
         Node newNode = new Node(data);
         if (isEmpty()) {
@@ -19,6 +41,7 @@ public class ListPasien {
             newNode.setNext(HEAD);
             HEAD = newNode;
         }
+        simpanKeFile(data);
     }
 
     public void addMid(Pasien data, int position) {
@@ -44,6 +67,7 @@ public class ListPasien {
                 newNode.setNext(curNode);
             }
         }
+        simpanKeFile(data);
     }
 
     public void addTail(Pasien data) {
@@ -61,10 +85,12 @@ public class ListPasien {
             }
             posNode.setNext(newNode);
         }
+        simpanKeFile(data);
     }
 
     private void dispose(Node node) {
         node.setNext(null);
         node = null;
     }
+
 }
