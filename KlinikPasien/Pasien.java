@@ -1,6 +1,7 @@
 package KlinikPasien;
 
 public class Pasien {
+    private static int counter = 1;
     private int id;
     private String nama;
     private String jenisKelamin;
@@ -12,6 +13,7 @@ public class Pasien {
     private String statusPasien;
 
     public Pasien(String nama, String jenisKelamin, int usia,String nomorTelepon, String alamat, String tanggalKunjungan, String keluhan, String statusPasien) {
+        this.id = counter++;
         this.nama = nama;
         this.jenisKelamin = jenisKelamin;
         this.usia = usia;
