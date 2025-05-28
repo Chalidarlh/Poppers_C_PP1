@@ -1,3 +1,2 @@
-0,Nada,perempuan,20,08123,bandung,2026-13-33,pusing,pasien baru
-1,chal,perempuan,20,08655,bdg,23,sakit,pasien baru
-2,nuy,laki-laki,56,089,bdg,78,sakit,pasien lama
+4,reza,laki-laki,20,123,bdg,2000,sehat,pasien baru
+1,Nadaa,perempuan,12,123,bdg,2024-8-8,baik,pasien baru

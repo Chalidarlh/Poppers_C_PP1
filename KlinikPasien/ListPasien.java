@@ -125,6 +125,7 @@ public class ListPasien {
             Node temp = HEAD;
             HEAD = HEAD.getNext();
             dispose(temp);
+            simpanUlangFile();
         }
     }
 
@@ -148,6 +149,7 @@ public class ListPasien {
                     preNode.setNext(tempNode.getNext());
                 }
                 dispose(tempNode);
+                simpanUlangFile();
                 System.out.println("Pasien dengan nama: " + nama + " berhasil dihapus.");
                 return;
             }
@@ -172,6 +174,7 @@ public class ListPasien {
 
             preNode.setNext(null);
             dispose(lastNode);
+            simpanUlangFile();
         }
     }
 
@@ -202,7 +205,10 @@ public class ListPasien {
             System.out.println("List Kosong");
         } else {
             Node curNode = HEAD;
-            System.out.println(curNode.getData());
+            while (curNode != null) {
+                System.out.println(curNode.getData());
+                curNode = curNode.getNext();
+            }
         }
         System.out.println();
     }
