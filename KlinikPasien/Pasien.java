@@ -94,4 +94,10 @@ public class Pasien {
         this.statusPasien = statusPasien;
     }
 
+    public String toString() {
+        return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon+ " " + alamat + " " + keluhan + " " +statusPasien;
+    }
+
+
 }
+

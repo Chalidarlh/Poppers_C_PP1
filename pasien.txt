@@ -3,3 +3,5 @@
 0,nuy,perempuan,28,setbud,banyak pikiran,menikah
 0,chal,perempuan,20,bdg,sakit,lama
 0,Reza,laki-laki,11,Bandung,lahir,pasien lama
+0,fazza,laki-laki,18,lmbng,banyak tugas,pasien lama
+0,dwi ,perempuan,23,cina,rarungsing,pasien baru

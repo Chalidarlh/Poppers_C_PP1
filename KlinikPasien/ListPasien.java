@@ -176,16 +176,7 @@ public class ListPasien {
             System.out.println("List Kosong");
         } else {
             Node curNode = HEAD;
-            while (curNode != null) {
-                System.out.println(curNode.getData().getId()+
-                 " " +curNode.getData().getNama()+ 
-                 " " +curNode.getData().getJenisKelamin()+ 
-                 " " +curNode.getData().getUsia()+ 
-                 " " +curNode.getData().getAlamat()+ 
-                 " " +curNode.getData().getKeluhan()+ 
-                 " " +curNode.getData().getStatusPasien());
-                curNode = curNode.getNext();
-            }
+            System.out.println(curNode.getData());
         }
         System.out.println();
     }
