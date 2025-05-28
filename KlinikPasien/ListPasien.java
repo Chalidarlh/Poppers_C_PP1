@@ -189,4 +189,20 @@ public class ListPasien {
         }
         System.out.println();
     }
+
+    public void updatepasien(String nama, int usia, String alamat, Pasien newData) {
+        Node curNode = HEAD;
+        while (curNode != null) {
+            if (curNode.getData().getNama().equals(nama) && 
+                curNode.getData().getUsia() == usia && 
+                curNode.getData().getAlamat().equals(alamat)) {
+                
+                curNode.setData(newData);
+                System.out.println("Pasien dengan nama: " + nama + " berhasil diupdate.");
+                return;
+            }
+            curNode = curNode.getNext();
+        }
+        System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
+    }
 }
