@@ -93,4 +93,100 @@ public class ListPasien {
         node = null;
     }
 
+    public void removeHead() {
+        if(isEmpty()) {
+            System.out.println("List is empty");
+        } else {
+            Node temp = HEAD;
+            HEAD = HEAD.getNext();
+            dispose(temp);
+        }
+    }
+
+    public void removeMid(String nama, int usia, String alamat) {
+        if (isEmpty()) {
+            System.out.println("List is empty");
+            return;
+        }
+    
+        Node tempNode = HEAD;
+        Node preNode = null;
+    
+        while (tempNode != null) {
+            if (tempNode.getData().getNama().equals(nama) && tempNode.getData().getUsia()== usia && tempNode.getData().getAlamat().equals(alamat)) {
+                if (preNode == null) {
+                    // Data berada di head
+                    HEAD = tempNode.getNext();
+                } else {
+                    // Data berada di tengah/akhir
+                    preNode.setNext(tempNode.getNext());
+                }
+                dispose(tempNode);
+                System.out.println("Pasien dengan nama: " + nama + " berhasil dihapus.");
+                return;
+            }
+            preNode = tempNode;
+            tempNode = tempNode.getNext();
+        }
+    
+        System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
+    }
+
+    public void removeTail() {
+        if(isEmpty()) {
+            System.out.println("List is empty");
+        } else {
+            Node lastNode = HEAD;
+            Node preNode = null;
+
+            while (lastNode.getNext() != null) {
+                preNode = lastNode;
+                lastNode = lastNode.getNext();
+            }
+
+            preNode.setNext(null);
+            dispose(lastNode);
+        }
+    }
+
+    public int count() {
+        Node curNode = HEAD;
+        int jumlah = 0;
+
+        while (curNode != null) {
+            jumlah = jumlah + 1;
+            curNode = curNode.getNext();
+        }
+        return jumlah;
+    }
+
+    public boolean find(String nama) {
+        Node curNode = HEAD;
+        while (curNode != null) {
+            if (curNode.getData().getNama().equals(nama)) {
+                return true;
+            }
+            curNode = curNode.getNext();
+        }
+        return false;
+    }
+
+    public void displayElement() {
+        if (isEmpty()) {
+            System.out.println("List Kosong");
+        } else {
+            Node curNode = HEAD;
+            while (curNode != null) {
+                System.out.println(curNode.getData().getId()+
+                 " " +curNode.getData().getNama()+ 
+                 " " +curNode.getData().getJenisKelamin()+ 
+                 " " +curNode.getData().getUsia()+ 
+                 " " +curNode.getData().getAlamat()+ 
+                 " " +curNode.getData().getKeluhan()+ 
+                 " " +curNode.getData().getStatusPasien());
+                curNode = curNode.getNext();
+            }
+        }
+        System.out.println();
+    }
 }
