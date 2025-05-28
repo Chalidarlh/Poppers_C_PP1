@@ -98,21 +98,44 @@ public class Main {
    private static Pasien buatPasien(Scanner input) {
         System.out.print("Nama: ");
         String nama = input.nextLine();
-        System.out.print("Jenis Kelamin: ");
-        String jk = input.nextLine();
+
+        String jk;
+        while (true) {
+            System.out.print("Jenis Kelamin (laki-laki/perempuan): ");
+            jk = input.nextLine().toLowerCase();
+            if (jk.equals("laki-laki") || jk.equals("perempuan")) {
+                break;
+            } else {
+                System.out.println("Masukkan hanya 'laki-laki' atau 'perempuan'");
+            }
+         }
+
         System.out.print("Usia: ");
         int usia = input.nextInt();
         input.nextLine(); // clear newline
+
         System.out.print("Nomor Telepon: ");
         String noTelp = input.nextLine();
+
         System.out.print("Alamat: ");
         String alamat = input.nextLine();
+
         System.out.print("Tanggal Kunjungan (yyyy-mm-dd): ");
         String tglKunjungan = input.nextLine();
+
         System.out.print("Keluhan: ");
             String keluhan = input.nextLine();
-        System.out.print("Status Pasien: ");
-        String status = input.nextLine();
+
+        String status;
+        while (true) {
+            System.out.print("Status Pasien (pasien baru/pasien lama): ");
+            status = input.nextLine().toLowerCase();
+            if (status.equals("pasien baru") || status.equals("pasien lama")) {
+                break;
+            } else {
+                System.out.println("Masukkan hanya 'pasien baru' atau 'pasien lama'.");
+            }
+        }
 
         return new Pasien(nama, jk, usia, noTelp, alamat, tglKunjungan, keluhan, status);
     }

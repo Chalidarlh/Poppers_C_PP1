@@ -190,7 +190,7 @@ public class ListPasien {
         System.out.println();
     }
 
-    public void updatepasien(String nama, int usia, String alamat, Pasien newData) {
+    public void updatePasien(String nama, int usia, String alamat, Pasien newData) {
         Node curNode = HEAD;
         while (curNode != null) {
             if (curNode.getData().getNama().equals(nama) && 

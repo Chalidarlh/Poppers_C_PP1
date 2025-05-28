@@ -1,1 +1,4 @@
 0,dwiyan,laki-laki,21,jalan lestari 1,sakit beteng,belum
+0,chalida,perempuan,20,seoul,banyak tugas,lama
+0,nuy,perempuan,28,setbud,banyak pikiran,menikah
+0,chal,perempuan,20,bdg,sakit,lama
