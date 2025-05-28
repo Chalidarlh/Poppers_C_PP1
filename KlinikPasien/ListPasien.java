@@ -35,6 +35,29 @@ public class ListPasien {
         }
     }
 
+    private void simpanUlangFile() {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("pasien.txt"))) {
+            Node current = HEAD;
+            while (current != null) {
+                Pasien p = current.getData();
+                String data = p.getId() + "," +
+                p.getNama() + "," +
+                p.getJenisKelamin() + "," +
+                p.getUsia() + "," +
+                p.getNomorTelepon() + "," +
+                p.getAlamat() + "," +
+                p.getTanggalKunjungan() + "," +
+                p.getKeluhan() + "," +
+                p.getStatusPasien();
+            bw.write(data);
+            bw.newLine();
+            current = current.getNext();
+            }
+        } catch (IOException e) {
+            System.out.println("Gagal menyimpan ulang ke file: " + e.getMessage());
+        }
+    }
+
     public void addHead(Pasien data) {
         Node newNode = new Node(data);
         if (isEmpty()) {
@@ -179,16 +202,7 @@ public class ListPasien {
             System.out.println("List Kosong");
         } else {
             Node curNode = HEAD;
-            while (curNode != null) {
-                System.out.println(curNode.getData().getId()+
-                 " " +curNode.getData().getNama()+ 
-                 " " +curNode.getData().getJenisKelamin()+ 
-                 " " +curNode.getData().getUsia()+ 
-                 " " +curNode.getData().getAlamat()+ 
-                 " " +curNode.getData().getKeluhan()+ 
-                 " " +curNode.getData().getStatusPasien());
-                curNode = curNode.getNext();
-            }
+            System.out.println(curNode.getData());
         }
         System.out.println();
     }
