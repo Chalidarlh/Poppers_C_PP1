@@ -22,7 +22,9 @@ public class ListPasien {
                     p.getNama() + "," +
                     p.getJenisKelamin() + "," +
                     p.getUsia() + "," +
+                    p.getNomorTelepon() + "," +
                     p.getAlamat() + "," +
+                    p.getTanggalKunjungan() + "," +
                     p.getKeluhan() + "," +
                     p.getStatusPasien();
 
@@ -94,7 +96,7 @@ public class ListPasien {
     }
 
     public void removeHead() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             System.out.println("List is empty");
         } else {
             Node temp = HEAD;
@@ -108,12 +110,13 @@ public class ListPasien {
             System.out.println("List is empty");
             return;
         }
-    
+
         Node tempNode = HEAD;
         Node preNode = null;
-    
+
         while (tempNode != null) {
-            if (tempNode.getData().getNama().equals(nama) && tempNode.getData().getUsia()== usia && tempNode.getData().getAlamat().equals(alamat)) {
+            if (tempNode.getData().getNama().equals(nama) && tempNode.getData().getUsia() == usia
+                    && tempNode.getData().getAlamat().equals(alamat)) {
                 if (preNode == null) {
                     // Data berada di head
                     HEAD = tempNode.getNext();
@@ -128,12 +131,12 @@ public class ListPasien {
             preNode = tempNode;
             tempNode = tempNode.getNext();
         }
-    
+
         System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
     }
 
     public void removeTail() {
-        if(isEmpty()) {
+        if (isEmpty()) {
             System.out.println("List is empty");
         } else {
             Node lastNode = HEAD;
@@ -184,10 +187,10 @@ public class ListPasien {
     public void updatePasien(String nama, int usia, String alamat, Pasien newData) {
         Node curNode = HEAD;
         while (curNode != null) {
-            if (curNode.getData().getNama().equals(nama) && 
-                curNode.getData().getUsia() == usia && 
-                curNode.getData().getAlamat().equals(alamat)) {
-                
+            if (curNode.getData().getNama().equals(nama) &&
+                    curNode.getData().getUsia() == usia &&
+                    curNode.getData().getAlamat().equals(alamat)) {
+
                 curNode.setData(newData);
                 System.out.println("Pasien dengan nama: " + nama + " berhasil diupdate.");
                 return;
