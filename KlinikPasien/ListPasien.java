@@ -110,10 +110,10 @@ public class ListPasien {
             System.out.println("List is empty");
             return;
         }
-
+    
         Node tempNode = HEAD;
         Node preNode = null;
-
+    
         while (tempNode != null) {
             if (tempNode.getData().getNama().equals(nama) && tempNode.getData().getUsia() == usia
                     && tempNode.getData().getAlamat().equals(alamat)) {
@@ -131,7 +131,7 @@ public class ListPasien {
             preNode = tempNode;
             tempNode = tempNode.getNext();
         }
-
+    
         System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
     }
 
@@ -179,7 +179,16 @@ public class ListPasien {
             System.out.println("List Kosong");
         } else {
             Node curNode = HEAD;
-            System.out.println(curNode.getData());
+            while (curNode != null) {
+                System.out.println(curNode.getData().getId()+
+                 " " +curNode.getData().getNama()+ 
+                 " " +curNode.getData().getJenisKelamin()+ 
+                 " " +curNode.getData().getUsia()+ 
+                 " " +curNode.getData().getAlamat()+ 
+                 " " +curNode.getData().getKeluhan()+ 
+                 " " +curNode.getData().getStatusPasien());
+                curNode = curNode.getNext();
+            }
         }
         System.out.println();
     }
@@ -187,10 +196,10 @@ public class ListPasien {
     public void updatePasien(String nama, int usia, String alamat, Pasien newData) {
         Node curNode = HEAD;
         while (curNode != null) {
-            if (curNode.getData().getNama().equals(nama) &&
-                    curNode.getData().getUsia() == usia &&
-                    curNode.getData().getAlamat().equals(alamat)) {
-
+            if (curNode.getData().getNama().equals(nama) && 
+                curNode.getData().getUsia() == usia && 
+                curNode.getData().getAlamat().equals(alamat)) {
+                
                 curNode.setData(newData);
                 System.out.println("Pasien dengan nama: " + nama + " berhasil diupdate.");
                 return;
@@ -198,5 +207,6 @@ public class ListPasien {
             curNode = curNode.getNext();
         }
         System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
+        simpanKeFile(newData);
     }
 }
