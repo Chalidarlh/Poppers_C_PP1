@@ -2,7 +2,7 @@ package KlinikPasien;
 
 import java.util.Scanner;
 
-public class Main {
+public class MenuProgram {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ListPasien daftarPasien = new ListPasien();
@@ -67,7 +67,7 @@ public class Main {
                     String alamatUpdate = input.nextLine();
                     System.out.println("Masukkan data pasien baru:");
                     Pasien dataBaru = buatPasien(input);
-                    daftarPasien.updatepasien(namaUpdate, usiaUpdate, alamatUpdate, dataBaru);
+                    daftarPasien.updatePasien(namaUpdate, usiaUpdate, alamatUpdate, dataBaru);
                     break;
                 case 9:
                     System.out.print("Masukkan Nama Pasien: ");
