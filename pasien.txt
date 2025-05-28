@@ -2,3 +2,4 @@
 0,chalida,perempuan,20,seoul,banyak tugas,lama
 0,nuy,perempuan,28,setbud,banyak pikiran,menikah
 0,chal,perempuan,20,bdg,sakit,lama
+0,Reza,laki-laki,11,Bandung,lahir,pasien lama
