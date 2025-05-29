@@ -1,3 +1,2 @@
-4,reza,laki-laki,20,123,bdg,2000,sehat,pasien baru
-1,Nadaa,perempuan,12,123,bdg,2024-8-8,baik,pasien baru
-3,klid,perempuan,78,908,yhg,yyy,sakit'],pasien baru
+2,chal,perempuan,22,089,gbi,2015-09-09,sakit,pasien lama
+2,nada,perempuan,17,098,gbi,2009,sehat,pasien baru

@@ -63,9 +63,11 @@ public class ListPasien {
     public void loadFromFile() {
         try (BufferedReader br = new BufferedReader(new FileReader("pasien.txt"))) {
             String line;
+
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
             
+                int id = Integer.parseInt(parts[0]);
                 String nama = parts[1];
                 String jenisKelamin = parts[2];
                  int usia = Integer.parseInt(parts[3]);
@@ -76,7 +78,8 @@ public class ListPasien {
                 String statusPasien = parts[8];
 
                 Pasien p = new Pasien(nama, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan, keluhan, statusPasien);
-                addTailTanpaSimpan(p);  
+                addTailTanpaSimpan(p); 
+                
             }
         }catch (IOException e) {
             System.out.println("Gagal load data dari file: " + e.getMessage());
