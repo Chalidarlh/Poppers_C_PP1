@@ -1,2 +1,0 @@
-2,chal,perempuan,22,089,gbi,2015-09-09,sakit,pasien lama
-2,nada,perempuan,17,098,gbi,2009,sehat,pasien baru
