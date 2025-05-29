@@ -1,6 +1,8 @@
 package KlinikPasien;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -57,6 +59,45 @@ public class ListPasien {
             System.out.println("Gagal menyimpan ulang ke file: " + e.getMessage());
         }
     }
+    
+    public void loadFromFile() {
+        try (BufferedReader br = new BufferedReader(new FileReader("pasien.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] parts = line.split(",");
+            
+                String nama = parts[1];
+                String jenisKelamin = parts[2];
+                 int usia = Integer.parseInt(parts[3]);
+                String nomorTelepon = parts[4];
+                String alamat = parts[5];
+                String tanggalKunjungan = parts[6];
+                String keluhan = parts[7];
+                String statusPasien = parts[8];
+
+                Pasien p = new Pasien(nama, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan, keluhan, statusPasien);
+                addTailTanpaSimpan(p);  
+            }
+        }catch (IOException e) {
+            System.out.println("Gagal load data dari file: " + e.getMessage());
+        }
+    }
+
+    public void addTailTanpaSimpan(Pasien data) {
+    Node newNode = new Node(data);
+    if (isEmpty()) {
+        HEAD = newNode;
+    } else {
+        Node curNode = HEAD;
+        while (curNode.getNext() != null) {
+            curNode = curNode.getNext();
+        }
+        curNode.setNext(newNode);
+    }
+}
+
+
+    
 
     public void addHead(Pasien data) {
         Node newNode = new Node(data);

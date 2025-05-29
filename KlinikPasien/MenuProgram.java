@@ -6,6 +6,7 @@ public class MenuProgram {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         ListPasien daftarPasien = new ListPasien();
+        daftarPasien.loadFromFile();
         int pilihan;
 
         do {
