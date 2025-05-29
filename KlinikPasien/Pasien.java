@@ -100,6 +100,9 @@ public class Pasien {
         return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon+ " " + alamat + " " + keluhan + " " +statusPasien;
     }
 
+    public static void setCounter(int nextId) {
+      counter = nextId;
+    }
 
 }
 
