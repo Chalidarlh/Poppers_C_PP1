@@ -1,0 +1,2 @@
+1,nuy,perempuan,12,089,gbi,2030,sehat,pasien baru
+2,nada,perempuan,12,123,gba,2134,sehat,pasien lama

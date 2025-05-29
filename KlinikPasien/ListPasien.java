@@ -67,7 +67,6 @@ public class ListPasien {
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
             
-                int id = Integer.parseInt(parts[0]);
                 String nama = parts[1];
                 String jenisKelamin = parts[2];
                  int usia = Integer.parseInt(parts[3]);
