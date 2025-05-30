@@ -232,15 +232,15 @@ public class ListPasien {
         return jumlah;
     }
 
-    public boolean find(String nama) {
+    public Pasien find(String nama) {
         Node curNode = HEAD;
         while (curNode != null) {
             if (curNode.getData().getNama().equals(nama)) {
-                return true;
+                return curNode.getData();
             }
             curNode = curNode.getNext();
         }
-        return false;
+        return null;
     }
 
     public void displayElement() {
