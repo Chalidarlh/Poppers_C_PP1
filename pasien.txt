@@ -1,3 +1,4 @@
 1,nuy,perempuan,12,089,gbi,2030,sehat,pasien baru
-3,jamjam,laki-laki,22,087654,kopo,2005-05-09,sehat,pasien baru
-4,jimjim,laki-laki,23,089,gbi,6666,sakit,pasien lama
+2,jamjam,laki-laki,22,087654,kopo,2005-05-09,sehat,pasien baru
+3,jimjim,laki-laki,23,089,gbi,6666,sakit,pasien lama
+4,nuy,perempuan,21,089,gbi,7878,sakit,pasien baru
