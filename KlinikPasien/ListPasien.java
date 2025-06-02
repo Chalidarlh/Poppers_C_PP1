@@ -37,29 +37,6 @@ public class ListPasien {
         }
     }
 
-//     public void simpanKeFile() {
-//         try (BufferedWriter bw = new BufferedWriter(new FileWriter("pasien.txt", false))) {
-//             Node current = HEAD;
-//             while (current != null) {
-//                 Pasien p = current.getData();
-//                 String data = p.getId() + "," +
-//                 p.getNama() + "," +
-//                 p.getJenisKelamin() + "," +
-//                 p.getUsia() + "," +
-//                 p.getNomorTelepon() + "," +
-//                 p.getAlamat() + "," +
-//                 p.getTanggalKunjungan() + "," +
-//                 p.getKeluhan() + "," +
-//                 p.getStatusPasien();
-
-//             bw.write(data);
-//             bw.newLine();
-//             current = current.getNext();
-//             }
-//         } catch (IOException e) {
-//             System.out.println("Gagal menyimpan ke file: " + e.getMessage());
-// }
-
     private void simpanUlangFile() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("pasien.txt"))) {
             Node current = HEAD;
@@ -120,9 +97,6 @@ public class ListPasien {
         curNode.setNext(newNode);
     }
 }
-
-
-    
 
     public void addHead(Pasien data) {
         Node newNode = new Node(data);
