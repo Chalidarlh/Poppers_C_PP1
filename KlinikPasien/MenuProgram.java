@@ -75,7 +75,7 @@ public class MenuProgram {
                     String namaCari = input.nextLine();
                     Pasien ditemukan = daftarPasien.find(namaCari);
                     if (ditemukan != null) {
-                        System.out.print("Pasien ditemukan." + ditemukan);
+                        System.out.println("Pasien ditemukan." + ditemukan);
                     } else {
                         System.out.println("Pasien tidak ditemukan.");
                     }
