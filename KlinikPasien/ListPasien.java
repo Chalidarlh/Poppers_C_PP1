@@ -17,23 +17,17 @@ public class ListPasien {
         }
     }
 
-    public void simpanKeFile(Pasien p) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("pasien.txt", true))) {
-            // format penulisan data pasien: dipisah koma
-            String data = p.getId() + "," +
-                    p.getNama() + "," +
-                    p.getJenisKelamin() + "," +
-                    p.getUsia() + "," +
-                    p.getNomorTelepon() + "," +
-                    p.getAlamat() + "," +
-                    p.getTanggalKunjungan() + "," +
-                    p.getKeluhan() + "," +
-                    p.getStatusPasien();
-
-            bw.write(data);
-            bw.newLine(); // tambahkan baris baru
+    public void simpanSemuaKeFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("pasien.txt"))) {
+            Node current = HEAD;
+            while (current != null) {
+                Pasien data = current.getData();
+                writer.write(data.toString()); // Pastikan Pasien punya method toString() yang formatnya benar
+                writer.newLine();
+                current = current.getNext();
+            }
         } catch (IOException e) {
-            System.out.println("Gagal menyimpan ke file: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
@@ -43,60 +37,61 @@ public class ListPasien {
             while (current != null) {
                 Pasien p = current.getData();
                 String data = p.getId() + "," +
-                p.getNama() + "," +
-                p.getJenisKelamin() + "," +
-                p.getUsia() + "," +
-                p.getNomorTelepon() + "," +
-                p.getAlamat() + "," +
-                p.getTanggalKunjungan() + "," +
-                p.getKeluhan() + "," +
-                p.getStatusPasien();
-            bw.write(data);
-            bw.newLine();
-            current = current.getNext();
+                        p.getNama() + "," +
+                        p.getJenisKelamin() + "," +
+                        p.getUsia() + "," +
+                        p.getNomorTelepon() + "," +
+                        p.getAlamat() + "," +
+                        p.getTanggalKunjungan() + "," +
+                        p.getKeluhan() + "," +
+                        p.getStatusPasien();
+                bw.write(data);
+                bw.newLine();
+                current = current.getNext();
             }
         } catch (IOException e) {
             System.out.println("Gagal menyimpan ulang ke file: " + e.getMessage());
         }
     }
-    
+
     public void loadFromFile() {
         try (BufferedReader br = new BufferedReader(new FileReader("pasien.txt"))) {
             String line;
 
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
-            
+
                 String nama = parts[1];
                 String jenisKelamin = parts[2];
-                 int usia = Integer.parseInt(parts[3]);
+                int usia = Integer.parseInt(parts[3]);
                 String nomorTelepon = parts[4];
                 String alamat = parts[5];
                 String tanggalKunjungan = parts[6];
                 String keluhan = parts[7];
                 String statusPasien = parts[8];
 
-                Pasien p = new Pasien(nama, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan, keluhan, statusPasien);
-                addTailTanpaSimpan(p); 
-                
+                Pasien p = new Pasien(nama, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan, keluhan,
+                        statusPasien);
+                addTailTanpaSimpan(p);
+
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Gagal load data dari file: " + e.getMessage());
         }
     }
 
     public void addTailTanpaSimpan(Pasien data) {
-    Node newNode = new Node(data);
-    if (isEmpty()) {
-        HEAD = newNode;
-    } else {
-        Node curNode = HEAD;
-        while (curNode.getNext() != null) {
-            curNode = curNode.getNext();
+        Node newNode = new Node(data);
+        if (isEmpty()) {
+            HEAD = newNode;
+        } else {
+            Node curNode = HEAD;
+            while (curNode.getNext() != null) {
+                curNode = curNode.getNext();
+            }
+            curNode.setNext(newNode);
         }
-        curNode.setNext(newNode);
     }
-}
 
     public void addHead(Pasien data) {
         Node newNode = new Node(data);
@@ -106,7 +101,7 @@ public class ListPasien {
             newNode.setNext(HEAD);
             HEAD = newNode;
         }
-        simpanKeFile(data);
+        simpanSemuaKeFile();
     }
 
     public void addMid(Pasien data, int position) {
@@ -132,7 +127,7 @@ public class ListPasien {
                 newNode.setNext(curNode);
             }
         }
-        simpanKeFile(data);
+        simpanSemuaKeFile();
     }
 
     public void addTail(Pasien data) {
@@ -150,7 +145,7 @@ public class ListPasien {
             }
             posNode.setNext(newNode);
         }
-        simpanKeFile(data);
+        simpanSemuaKeFile();
     }
 
     private void dispose(Node node) {
@@ -174,10 +169,10 @@ public class ListPasien {
             System.out.println("List is empty");
             return;
         }
-    
+
         Node tempNode = HEAD;
         Node preNode = null;
-    
+
         while (tempNode != null) {
             if (tempNode.getData().getNama().equals(nama) && tempNode.getData().getUsia() == usia
                     && tempNode.getData().getAlamat().equals(alamat)) {
@@ -196,7 +191,7 @@ public class ListPasien {
             preNode = tempNode;
             tempNode = tempNode.getNext();
         }
-    
+
         System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
     }
 
@@ -274,11 +269,10 @@ public class ListPasien {
                 simpanUlangFile(); // simpan seluruh data list ke file
                 break;
             }
-        curNode = curNode.getNext();
-}
-
-if (!ditemukan) {
-    System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
-}
+            curNode = curNode.getNext();
+        }
+        if (!ditemukan) {
+            System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
+        }
     }
 }
