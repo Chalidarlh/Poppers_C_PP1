@@ -15,7 +15,8 @@ public class Pasien {
     private String keluhan;
     private String statusPasien;
 
-    public Pasien(String nama, LocalDate tanggalLahir, String jenisKelamin, int usia,String nomorTelepon, String alamat, LocalDate tanggalKunjungan, String keluhan, String statusPasien) {
+    public Pasien(String nama, LocalDate tanggalLahir, String jenisKelamin, int usia, String nomorTelepon,
+            String alamat, LocalDate tanggalKunjungan, String keluhan, String statusPasien) {
         this.id = counter++;
         this.nama = nama;
         this.tanggalLahir = tanggalLahir;
@@ -43,12 +44,15 @@ public class Pasien {
     public void setNama(String nama) {
         this.nama = nama;
     }
+
     public LocalDate getTanggalLahir() {
         return tanggalLahir;
     }
+
     public void setTanggalLahir(LocalDate tanggalLahir) {
         this.tanggalLahir = tanggalLahir;
     }
+
     public String getJenisKelamin() {
         return jenisKelamin;
     }
@@ -80,12 +84,15 @@ public class Pasien {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
+
     public LocalDate getTanggalKunjungan() {
         return tanggalKunjungan;
     }
+
     public void setTanggalKunjungan(LocalDate tanggalKunjungan) {
         this.tanggalKunjungan = tanggalKunjungan;
     }
+
     public String getKeluhan() {
         return keluhan;
     }
@@ -103,12 +110,12 @@ public class Pasien {
     }
 
     public String toString() {
-        return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon+ " "   + alamat + " " + keluhan + " " +statusPasien;
+        return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + keluhan
+                + " " + statusPasien;
     }
 
     public static void setCounter(int nextId) {
-      counter = nextId;
+        counter = nextId;
     }
 
 }
-
