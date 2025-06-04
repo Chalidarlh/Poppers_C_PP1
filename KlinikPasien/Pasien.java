@@ -15,12 +15,8 @@ public class Pasien {
     private String keluhan;
     private String statusPasien;
 
-<<<<<<< HEAD
     public Pasien(String nama, LocalDate tanggalLahir, String jenisKelamin, int usia,String nomorTelepon, String alamat, LocalDate tanggalKunjungan, String keluhan, String statusPasien) {
-=======
-    public Pasien(String nama, String jenisKelamin, int usia,String nomorTelepon, String alamat, String tanggalKunjungan, String keluhan, String statusPasien) {
         this.id = counter++;
->>>>>>> a960c00f807a4043d0fc3c9231c15cfedbf5a215
         this.nama = nama;
         this.tanggalLahir = tanggalLahir;
         this.jenisKelamin = jenisKelamin;

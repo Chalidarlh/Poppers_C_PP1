@@ -7,6 +7,9 @@ public class Node {
 	public Node(Pasien data) {
 		this.data = data;
 	}
+
+    public Node() {
+    }
 	public void setData(Pasien data) {
 		this.data = data;
 	}
