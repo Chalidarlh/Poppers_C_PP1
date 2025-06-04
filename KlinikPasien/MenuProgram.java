@@ -1,5 +1,7 @@
 package KlinikPasien;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class MenuProgram {
@@ -111,6 +113,17 @@ public class MenuProgram {
             }
          }
 
+        LocalDate tanggalLahir = null;
+        while (true) {
+            try {
+                System.out.print("Tanggal Lahir (yyyy-mm-dd): ");
+                tanggalLahir = LocalDate.parse(input.nextLine());
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("Format tanggal tidak valid. Contoh: 2001-12-25");
+            }
+        }
+
         System.out.print("Usia: ");
         int usia = input.nextInt();
         input.nextLine(); // clear newline
@@ -121,8 +134,16 @@ public class MenuProgram {
         System.out.print("Alamat: ");
         String alamat = input.nextLine();
 
-        System.out.print("Tanggal Kunjungan (yyyy-mm-dd): ");
-        String tglKunjungan = input.nextLine();
+        LocalDate tanggalKunjungan = null;
+        while (true) {
+            try {
+                System.out.print("Tanggal Kunjungan (yyyy-mm-dd): ");
+                tanggalKunjungan = LocalDate.parse(input.nextLine());
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("Format tanggal tidak valid. Contoh: 2024-05-30");
+            }
+        }
 
         System.out.print("Keluhan: ");
             String keluhan = input.nextLine();
@@ -138,7 +159,7 @@ public class MenuProgram {
             }
         }
 
-        return new Pasien(nama, jk, usia, noTelp, alamat, tglKunjungan, keluhan, status);
+        return new Pasien(nama, tanggalLahir, jk, usia, noTelp, alamat, tanggalKunjungan, keluhan, status);
     }
 }
 

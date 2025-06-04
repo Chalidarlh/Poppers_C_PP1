@@ -1,4 +1,4 @@
-1,nuy,perempuan,12,089,gbi,2030,sehat,pasien baru
-2,jamjam,laki-laki,22,087654,kopo,2005-05-09,sehat,pasien baru
-4,nuy,perempuan,21,089,gbi,7878,sakit,pasien baru
-5,kalid,perempuan,22,089,kopo,2009,sehat,pasien baru
+1,nuy,2001-09-08,perempuan,12,089,gbi,2001-09-08,sehat,pasien baru
+2,jamjam,2001-09-08,laki-laki,22,087654,kopo,2005-05-09,sehat,pasien baru
+4,nuy,2001-09-08,perempuan,21,089,gbi,2001-09-08,sakit,pasien baru
+5,kalid,2001-09-08,perempuan,22,089,kopo,2001-09-08,sehat,pasien baru

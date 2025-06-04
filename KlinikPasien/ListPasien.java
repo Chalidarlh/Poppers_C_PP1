@@ -5,6 +5,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class ListPasien {
     Node HEAD;
@@ -38,6 +39,7 @@ public class ListPasien {
                 Pasien p = current.getData();
                 String data = p.getId() + "," +
                         p.getNama() + "," +
+                        p.getTanggalLahir() + "," +
                         p.getJenisKelamin() + "," +
                         p.getUsia() + "," +
                         p.getNomorTelepon() + "," +
@@ -62,15 +64,16 @@ public class ListPasien {
                 String[] parts = line.split(",");
 
                 String nama = parts[1];
-                String jenisKelamin = parts[2];
-                int usia = Integer.parseInt(parts[3]);
-                String nomorTelepon = parts[4];
-                String alamat = parts[5];
-                String tanggalKunjungan = parts[6];
-                String keluhan = parts[7];
-                String statusPasien = parts[8];
+                LocalDate tanggalLahir = LocalDate.parse(parts[2]);
+                String jenisKelamin = parts[3];
+                int usia = Integer.parseInt(parts[4]);
+                String nomorTelepon = parts[5];
+                String alamat = parts[6];
+                LocalDate tanggalKunjungan = LocalDate.parse(parts[7]);
+                String keluhan = parts[8];
+                String statusPasien = parts[9];
 
-                Pasien p = new Pasien(nama, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan, keluhan,
+                Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan, keluhan,
                         statusPasien);
                 addTailTanpaSimpan(p);
 
@@ -256,6 +259,7 @@ public class ListPasien {
             if (p.getNama().equalsIgnoreCase(nama) && p.getUsia() == usia && p.getAlamat().equalsIgnoreCase(alamat)) {
                 // Ganti field satu per satu (ID tetap sama)
                 p.setNama(newData.getNama());
+                p.setTanggalLahir(newData.getTanggalLahir());
                 p.setJenisKelamin(newData.getJenisKelamin());
                 p.setUsia(newData.getUsia());
                 p.setNomorTelepon(newData.getNomorTelepon());
