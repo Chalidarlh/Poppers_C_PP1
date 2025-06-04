@@ -1,19 +1,22 @@
 package KlinikPasien;
 
+import java.time.LocalDate;
+
 public class Pasien {
     private int id;
     private String nama;
-    private String tanggalLahir;
+    private LocalDate tanggalLahir;
     private String jenisKelamin;
     private int usia;
     private String nomorTelepon;
     private String alamat;
-    private String tanggalKunjungan;
+    private LocalDate tanggalKunjungan;
     private String keluhan;
     private String statusPasien;
 
-    public Pasien(String nama, String jenisKelamin, int usia,String nomorTelepon, String alamat, String tanggalKunjungan, String keluhan, String statusPasien) {
+    public Pasien(String nama, LocalDate tanggalLahir, String jenisKelamin, int usia,String nomorTelepon, String alamat, LocalDate tanggalKunjungan, String keluhan, String statusPasien) {
         this.nama = nama;
+        this.tanggalLahir = tanggalLahir;
         this.jenisKelamin = jenisKelamin;
         this.usia = usia;
         this.nomorTelepon = nomorTelepon;
@@ -38,7 +41,12 @@ public class Pasien {
     public void setNama(String nama) {
         this.nama = nama;
     }
-
+    public LocalDate getTanggalLahir() {
+        return tanggalLahir;
+    }
+    public void setTanggalLahir(LocalDate tanggalLahir) {
+        this.tanggalLahir = tanggalLahir;
+    }
     public String getJenisKelamin() {
         return jenisKelamin;
     }
@@ -70,15 +78,12 @@ public class Pasien {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-
-    public String getTanggalKunjungan() {
+    public LocalDate getTanggalKunjungan() {
         return tanggalKunjungan;
     }
-
-    public void setTanggalKunjungan(String tanggalKunjungan) {
+    public void setTanggalKunjungan(LocalDate tanggalKunjungan) {
         this.tanggalKunjungan = tanggalKunjungan;
     }
-
     public String getKeluhan() {
         return keluhan;
     }
