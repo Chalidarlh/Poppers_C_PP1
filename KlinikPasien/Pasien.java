@@ -3,6 +3,7 @@ package KlinikPasien;
 import java.time.LocalDate;
 
 public class Pasien {
+    private static int counter = 1;
     private int id;
     private String nama;
     private LocalDate tanggalLahir;
@@ -14,7 +15,12 @@ public class Pasien {
     private String keluhan;
     private String statusPasien;
 
+<<<<<<< HEAD
     public Pasien(String nama, LocalDate tanggalLahir, String jenisKelamin, int usia,String nomorTelepon, String alamat, LocalDate tanggalKunjungan, String keluhan, String statusPasien) {
+=======
+    public Pasien(String nama, String jenisKelamin, int usia,String nomorTelepon, String alamat, String tanggalKunjungan, String keluhan, String statusPasien) {
+        this.id = counter++;
+>>>>>>> a960c00f807a4043d0fc3c9231c15cfedbf5a215
         this.nama = nama;
         this.tanggalLahir = tanggalLahir;
         this.jenisKelamin = jenisKelamin;
@@ -104,6 +110,9 @@ public class Pasien {
         return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon+ " "   + alamat + " " + keluhan + " " +statusPasien;
     }
 
+    public static void setCounter(int nextId) {
+      counter = nextId;
+    }
 
 }
 

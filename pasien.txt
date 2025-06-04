@@ -1,7 +1,4 @@
-0,dwiyan,laki-laki,21,jalan lestari 1,sakit beteng,belum
-0,chalida,perempuan,20,seoul,banyak tugas,lama
-0,nuy,perempuan,28,setbud,banyak pikiran,menikah
-0,chal,perempuan,20,bdg,sakit,lama
-0,Reza,laki-laki,11,Bandung,lahir,pasien lama
-0,fazza,laki-laki,18,lmbng,banyak tugas,pasien lama
-0,dwi ,perempuan,23,cina,rarungsing,pasien baru
+1,nuy,perempuan,12,089,gbi,2030,sehat,pasien baru
+2,jamjam,laki-laki,22,087654,kopo,2005-05-09,sehat,pasien baru
+4,nuy,perempuan,21,089,gbi,7878,sakit,pasien baru
+5,kalid,perempuan,22,089,kopo,2009,sehat,pasien baru
