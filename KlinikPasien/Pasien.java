@@ -3,6 +3,7 @@ package KlinikPasien;
 public class Pasien {
     private int id;
     private String nama;
+    private String tanggalLahir;
     private String jenisKelamin;
     private int usia;
     private String nomorTelepon;
@@ -95,7 +96,7 @@ public class Pasien {
     }
 
     public String toString() {
-        return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon+ " " + alamat + " " + keluhan + " " +statusPasien;
+        return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon+ " "   + alamat + " " + keluhan + " " +statusPasien;
     }
 
 
