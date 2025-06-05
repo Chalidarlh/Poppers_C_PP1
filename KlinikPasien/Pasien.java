@@ -110,8 +110,7 @@ public class Pasien {
     }
 
     public String toString() {
-        return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + keluhan
-                + " " + statusPasien;
+        return id + " " + nama + " " + tanggalLahir + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + tanggalKunjungan + " " + keluhan + " " + statusPasien;
     }
 
     public static void setCounter(int nextId) {
