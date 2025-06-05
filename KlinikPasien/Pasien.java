@@ -110,7 +110,7 @@ public class Pasien {
     }
 
     public String toString() {
-        return id + " " + nama + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + keluhan
+        return id + " " + nama + " " + tanggalLahir + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + tanggalKunjungan + " " + keluhan
                 + " " + statusPasien;
     }
 
