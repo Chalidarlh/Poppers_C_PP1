@@ -22,8 +22,17 @@ public class ListPasien {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter("pasien.txt"))) {
             Node current = HEAD;
             while (current != null) {
-                Pasien data = current.getData();
-                writer.write(data.toString()); // Pastikan Pasien punya method toString() yang formatnya benar
+                Pasien p = current.getData();
+                writer.write(p.getId() + "," +
+                        p.getNama() + "," +
+                        p.getTanggalLahir() + "," +
+                        p.getJenisKelamin() + "," +
+                        p.getUsia() + "," +
+                        p.getNomorTelepon() + "," +
+                        p.getAlamat() + "," +
+                        p.getTanggalKunjungan() + "," +
+                        p.getKeluhan() + "," +
+                        p.getStatusPasien());
                 writer.newLine();
                 current = current.getNext();
             }
@@ -73,7 +82,8 @@ public class ListPasien {
                 String keluhan = parts[8];
                 String statusPasien = parts[9];
 
-                Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan, keluhan,
+                Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan,
+                        keluhan,
                         statusPasien);
                 addTailTanpaSimpan(p);
 
