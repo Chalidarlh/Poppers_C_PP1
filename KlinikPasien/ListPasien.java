@@ -261,7 +261,6 @@ public class ListPasien {
         if (!ditemukan) {
             System.out.println("Data pasien tidak ditemukan");
         }
-        ;
     }
 
     public void displayElement() {
