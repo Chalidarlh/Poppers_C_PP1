@@ -237,15 +237,31 @@ public class ListPasien {
         return jumlah;
     }
 
-    public Pasien find(String nama) {
+    public void find(String nama) {
         Node curNode = HEAD;
+        boolean ditemukan = false;
         while (curNode != null) {
-            if (curNode.getData().getNama().equals(nama)) {
-                return curNode.getData();
+            if (curNode.getData().getNama().equalsIgnoreCase(nama)) {
+                Pasien p = curNode.getData();
+                System.out.println("Id                : " + p.getId());
+                System.out.println("Nama              : " + p.getNama());
+                System.out.println("Tanggal Lahir     : " + p.getTanggalLahir());
+                System.out.println("Jenis Kelamin     : " + p.getJenisKelamin());
+                System.out.println("Usia              : " + p.getUsia());
+                System.out.println("No Telepon        : " + p.getNomorTelepon());
+                System.out.println("Alamat            : " + p.getAlamat());
+                System.out.println("Tanggal Kunjungan : " + p.getTanggalKunjungan());
+                System.out.println("Keluhan           : " + p.getKeluhan());
+                System.out.println("Status Pasien     : " + p.getStatusPasien());
+                System.out.println("--------------------------------------");
+                ditemukan = true;
             }
             curNode = curNode.getNext();
         }
-        return null;
+        if (!ditemukan) {
+            System.out.println("Data pasien tidak ditemukan");
+        }
+        ;
     }
 
     public void displayElement() {

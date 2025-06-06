@@ -63,12 +63,7 @@ public class Main {
                 case 9:
                     System.out.print("Masukkan Nama Pasien: ");
                     String namaCari = input.nextLine();
-                    Pasien ditemukan = daftarPasien.find(namaCari);
-                    if (ditemukan != null) {
-                        System.out.println("Pasien ditemukan." + ditemukan);
-                    } else {
-                        System.out.println("Pasien tidak ditemukan.");
-                    }
+                    daftarPasien.find(namaCari);
                     break;
                 case 10:
                     int jumlah = daftarPasien.count();
@@ -86,7 +81,7 @@ public class Main {
         input.close();
     }
 
-   private static Pasien buatPasien(Scanner input) {
+    private static Pasien buatPasien(Scanner input) {
         System.out.print("Nama: ");
         String nama = input.nextLine();
 
@@ -99,7 +94,7 @@ public class Main {
             } else {
                 System.out.println("Masukkan hanya 'laki-laki' atau 'perempuan'");
             }
-         }
+        }
 
         LocalDate tanggalLahir = null;
         while (true) {
@@ -134,7 +129,7 @@ public class Main {
         }
 
         System.out.print("Keluhan: ");
-            String keluhan = input.nextLine();
+        String keluhan = input.nextLine();
 
         String status;
         while (true) {
@@ -150,4 +145,3 @@ public class Main {
         return new Pasien(nama, tanggalLahir, jk, usia, noTelp, alamat, tanggalKunjungan, keluhan, status);
     }
 }
-

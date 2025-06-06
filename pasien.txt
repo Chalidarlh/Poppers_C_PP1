@@ -1,3 +1,4 @@
 1,chalida,2005-03-04,perempuan,21,0897689,bandung,2009-09-08,sehat,pasien lama
 2,nuy,2007-09-08,perempuan,14,089765,gbi,2007-09-04,sakit,pasien lama
 3,nobita,2006-06-09,laki-laki,22,,gbi,2012-09-08,manja,pasien lama
+4,nuy,2004-12-30,perempuan,20,089,bandung,2025-03-31,sehat,pasien lama
