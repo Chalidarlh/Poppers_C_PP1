@@ -70,8 +70,19 @@ public class Main {
     }
 
     private static Pasien buatPasien(Scanner input) {
+        String nama;
+        while (true) { 
         System.out.print("Nama: ");
-        String nama = input.nextLine();
+        nama = input.nextLine().trim();
+        if (nama.isEmpty()) {
+            System.out.println("Nama tidak boleh kosong. Silahkan masukkan nama yang valid"); 
+            } else if (!nama.matches("[a-zA-Z\\s]+")) {
+                System.out.println("Nama hanya boleh mengandung huruf dan spasi. Silahkan masukkan nama yang valid"); 
+            } else {
+                break;
+            }
+        } 
+
 
         String jk;
         while (true) {
@@ -95,9 +106,20 @@ public class Main {
             }
         }
 
-        System.out.print("Usia: ");
-        int usia = input.nextInt();
-        input.nextLine(); // clear newline
+        int usia;
+        while (true) {
+            System.out.print("Usia: ");
+            try {
+                usia = Integer.parseInt(input.nextLine());
+                if (usia < 0 || usia > 100) {
+                    System.out.print("Usia tidak boleh 4 angka."); 
+                } else {
+                    break;
+                }
+            }catch (NumberFormatException e) {
+                System.out.print("Usia harus berpa angka. Silahkan coba lagi. ");
+            }
+        }
 
         System.out.print("Nomor Telepon: ");
         String noTelp = input.nextLine();
@@ -116,9 +138,17 @@ public class Main {
             }
         }
 
-        System.out.print("Keluhan: ");
-        String keluhan = input.nextLine();
-
+        String keluhan;
+        while (true) {
+            System.out.print("Keluhan: ");
+            keluhan = input.nextLine().trim();
+            if (keluhan.isEmpty()) {
+                System.out.println("keluhan tidak boleh kosong");
+            } else {
+                break;
+            }
+        }
+        
         return new Pasien(nama, tanggalLahir, jk, usia, noTelp, alamat, tanggalKunjungan, keluhan);
     }
 }
