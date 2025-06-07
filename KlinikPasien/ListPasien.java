@@ -74,8 +74,7 @@ public class ListPasien {
                 String alamat = parts[6];
                 LocalDate tanggalKunjungan = LocalDate.parse(parts[7]);
                 String keluhan = parts[8];
-                String statusPasien = parts[9];
-
+                
                 Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan,
                         keluhan);
                 addTailTanpaSimpan(p);
