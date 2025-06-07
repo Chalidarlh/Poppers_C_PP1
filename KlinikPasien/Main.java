@@ -1,11 +1,10 @@
 package KlinikPasien;
 
+import KlinikPasien.src.Entity.Pasien;
+import KlinikPasien.src.Services.ListPasien;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
-
-import KlinikPasien.src.Entity.Pasien;
-import KlinikPasien.src.Services.ListPasien;
 
 public class Main {
     public static void main(String[] args) {
@@ -117,7 +116,7 @@ public class Main {
                     break;
                 }
             }catch (NumberFormatException e) {
-                System.out.print("Usia harus berpa angka. Silahkan coba lagi. ");
+                System.out.print("Usia harus berupa angka. Silahkan coba lagi. ");
             }
         }
 
