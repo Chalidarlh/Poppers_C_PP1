@@ -283,7 +283,6 @@ public class ListPasien {
                 p.setAlamat(newData.getAlamat());
                 p.setTanggalKunjungan(newData.getTanggalKunjungan());
                 p.setKeluhan(newData.getKeluhan());
-                p.setStatusPasien(newData.getStatusPasien());
 
                 System.out.println("Pasien dengan nama: " + nama + " berhasil diupdate.");
                 ditemukan = true;
