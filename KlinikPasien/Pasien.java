@@ -13,10 +13,9 @@ public class Pasien {
     private String alamat;
     private LocalDate tanggalKunjungan;
     private String keluhan;
-    private String statusPasien;
 
     public Pasien(String nama, LocalDate tanggalLahir, String jenisKelamin, int usia, String nomorTelepon,
-            String alamat, LocalDate tanggalKunjungan, String keluhan, String statusPasien) {
+            String alamat, LocalDate tanggalKunjungan, String keluhan) {
         this.id = counter++;
         this.nama = nama;
         this.tanggalLahir = tanggalLahir;
@@ -26,7 +25,6 @@ public class Pasien {
         this.alamat = alamat;
         this.tanggalKunjungan = tanggalKunjungan;
         this.keluhan = keluhan;
-        this.statusPasien = statusPasien;
     }
 
     public int getId() {
@@ -100,18 +98,8 @@ public class Pasien {
     public void setKeluhan(String keluhan) {
         this.keluhan = keluhan;
     }
-
-    public String getStatusPasien() {
-        return statusPasien;
-    }
-
-    public void setStatusPasien(String statusPasien) {
-        this.statusPasien = statusPasien;
-    }
-
     public String toString() {
-        return id + " " + nama + " " + tanggalLahir + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + tanggalKunjungan + " " + keluhan
-                + " " + statusPasien;
+        return id + " " + nama + " " + tanggalLahir + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + tanggalKunjungan + " " + keluhan;
     }
 
     public static void setCounter(int nextId) {

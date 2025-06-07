@@ -27,8 +27,7 @@ public class ListPasien {
                         p.getNomorTelepon() + "," +
                         p.getAlamat() + "," +
                         p.getTanggalKunjungan() + "," +
-                        p.getKeluhan() + "," +
-                        p.getStatusPasien());
+                        p.getKeluhan());
                 writer.newLine();
                 current = current.getNext();
             }
@@ -50,8 +49,7 @@ public class ListPasien {
                         p.getNomorTelepon() + "," +
                         p.getAlamat() + "," +
                         p.getTanggalKunjungan() + "," +
-                        p.getKeluhan() + "," +
-                        p.getStatusPasien();
+                        p.getKeluhan();
                 bw.write(data);
                 bw.newLine();
                 current = current.getNext();
@@ -78,9 +76,7 @@ public class ListPasien {
                 String keluhan = parts[8];
                 String statusPasien = parts[9];
 
-                Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan,
-                        keluhan,
-                        statusPasien);
+                Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan,keluhan);
                 addTailTanpaSimpan(p);
 
             }

@@ -142,6 +142,6 @@ public class Main {
             }
         }
 
-        return new Pasien(nama, tanggalLahir, jk, usia, noTelp, alamat, tanggalKunjungan, keluhan, status);
+        return new Pasien(nama, tanggalLahir, jk, usia, noTelp, alamat, tanggalKunjungan, keluhan);
     }
 }
