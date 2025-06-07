@@ -1,4 +1,4 @@
-package KlinikPasien;
+package KlinikPasien.src.Entity;
 
 import java.time.LocalDate;
 

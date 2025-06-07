@@ -4,6 +4,9 @@ import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
+import KlinikPasien.src.Entity.Pasien;
+import KlinikPasien.src.Services.ListPasien;
+
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -12,7 +15,7 @@ public class Main {
         int pilihan;
 
         do {
-            MenuProgram.tampilkanMenu();
+            ListPasien.tampilkanMenu();
             pilihan = input.nextInt();
             input.nextLine(); // clear newline
 

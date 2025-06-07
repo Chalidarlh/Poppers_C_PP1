@@ -1,4 +1,6 @@
-package KlinikPasien;
+package KlinikPasien.src.Util;
+
+import KlinikPasien.src.Entity.Pasien;
 
 public class Node {
     private Pasien data;
