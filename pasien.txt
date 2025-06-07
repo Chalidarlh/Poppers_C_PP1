@@ -2,3 +2,5 @@
 2,nuy,2007-09-08,perempuan,14,089765,gbi,2007-09-04,sakit
 3,nobita,2006-06-09,laki-laki,22,,gbi,2012-09-08,manja
 4,nuy,2004-12-30,perempuan,20,089,bandung,2025-03-31,sehat
+5,Reza,2004-12-12,laki-laki,20,08,Bdg,2025-12-12,Sakit
+6,RZ,2000-12-12,laki-laki,12,12,12,1212-12-12,12

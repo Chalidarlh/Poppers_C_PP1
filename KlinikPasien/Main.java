@@ -21,24 +21,12 @@ public class Main {
 
             switch (pilihan) {
                 case 1:
-                    daftarPasien.addHead(buatPasien(input));
-                    break;
-                case 2:
-                    System.out.print("Masukkan posisi: ");
-                    int posisi = input.nextInt();
-                    input.nextLine();
-                    daftarPasien.addMid(buatPasien(input), posisi);
-                    break;
-                case 3:
                     daftarPasien.addTail(buatPasien(input));
                     break;
-                case 4:
+                case 2:
                     daftarPasien.displayElement();
                     break;
-                case 5:
-                    daftarPasien.removeHead();
-                    break;
-                case 6:
+                case 3:
                     System.out.print("Masukkan Nama Pasien yang akan dihapus: ");
                     String namaHapus = input.nextLine();
                     System.out.print("Usia: ");
@@ -48,10 +36,7 @@ public class Main {
                     String alamatHapus = input.nextLine();
                     daftarPasien.removeMid(namaHapus, usiaHapus, alamatHapus);
                     break;
-                case 7:
-                    daftarPasien.removeTail();
-                    break;
-                case 8:
+                case 4:
                     System.out.print("Masukkan Nama Pasien yang akan diupdate: ");
                     String namaUpdate = input.nextLine();
                     System.out.print("Usia: ");
@@ -63,12 +48,12 @@ public class Main {
                     Pasien dataBaru = buatPasien(input);
                     daftarPasien.updatePasien(namaUpdate, usiaUpdate, alamatUpdate, dataBaru);
                     break;
-                case 9:
+                case 5:
                     System.out.print("Masukkan Nama Pasien: ");
                     String namaCari = input.nextLine();
                     daftarPasien.find(namaCari);
                     break;
-                case 10:
+                case 6:
                     int jumlah = daftarPasien.count();
                     System.out.println("Jumlah pasien: " + jumlah);
                     break;
@@ -133,17 +118,6 @@ public class Main {
 
         System.out.print("Keluhan: ");
         String keluhan = input.nextLine();
-
-        String status;
-        while (true) {
-            System.out.print("Status Pasien (pasien baru/pasien lama): ");
-            status = input.nextLine().toLowerCase();
-            if (status.equals("pasien baru") || status.equals("pasien lama")) {
-                break;
-            } else {
-                System.out.println("Masukkan hanya 'pasien baru' atau 'pasien lama'.");
-            }
-        }
 
         return new Pasien(nama, tanggalLahir, jk, usia, noTelp, alamat, tanggalKunjungan, keluhan);
     }
