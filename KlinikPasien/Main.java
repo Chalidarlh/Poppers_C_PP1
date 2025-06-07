@@ -26,7 +26,7 @@ public class Main {
                     daftarPasien.displayElement();
                     break;
                 case 3:
-                    System.out.print("Masukkan Nama Pasien yang akan dihapus: ");
+                    System.out.print("Masukkan nama pasien yang akan dihapus: ");
                     String namaHapus = input.nextLine();
                     System.out.print("Usia: ");
                     int usiaHapus = input.nextInt();
@@ -36,7 +36,7 @@ public class Main {
                     daftarPasien.removeMid(namaHapus, usiaHapus, alamatHapus);
                     break;
                 case 4:
-                    System.out.print("Masukkan Nama Pasien yang akan diupdate: ");
+                    System.out.print("Masukkan nama pasien yang akan diupdate: ");
                     String namaUpdate = input.nextLine();
                     System.out.print("Usia: ");
                     int usiaUpdate = input.nextInt();
@@ -82,6 +82,21 @@ public class Main {
             }
         } 
 
+        LocalDate tanggalLahir = null;
+        while (true) {
+            try {
+                System.out.print("Tanggal Lahir (yyyy-mm-dd): ");
+                String inputTanggal = input.nextLine().trim();
+                if (inputTanggal.isEmpty()) {
+                    System.out.println("Tanggal lahir tidak boleh kosong.");
+                    continue;
+                }
+                tanggalLahir = LocalDate.parse(inputTanggal);
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("Format tanggal tidak valid. Contoh: 2001-12-25");
+            }
+        }
 
         String jk;
         while (true) {
@@ -91,17 +106,6 @@ public class Main {
                 break;
             } else {
                 System.out.println("Masukkan hanya 'laki-laki' atau 'perempuan'");
-            }
-        }
-
-        LocalDate tanggalLahir = null;
-        while (true) {
-            try {
-                System.out.print("Tanggal Lahir (yyyy-mm-dd): ");
-                tanggalLahir = LocalDate.parse(input.nextLine());
-                break;
-            } catch (DateTimeParseException e) {
-                System.out.println("Format tanggal tidak valid. Contoh: 2001-12-25");
             }
         }
 
@@ -120,23 +124,20 @@ public class Main {
             }
         }
 
-        System.out.print("Nomor Telepon: ");
-        String noTelp = input.nextLine();
+        String noTelp;
         while (true) {
-        System.out.print("Nomor Telepon: ");
-        noTelp = input.nextLine().trim();
-
-        if (noTelp.isEmpty()) {
-            System.out.println("Nomor telepon tidak boleh kosong. Silakan masukkan nomorTelepon; telepon yang valid.");
-        } else if (noTelp.length() < 10) {
-            System.out.println("Nomor telepon harus terdiri dari minimal 10 digit. Silakan masukkan nomorTelepon; telepon yang valid.");
-        } else {
-            break;
+            System.out.print("Nomor Telepon: ");
+            noTelp = input.nextLine().trim();
+            if (noTelp.isEmpty()) {
+                System.out.println("Nomor telepon tidak boleh kosong. Silakan masukkan nomor telepon yang valid.");
+            } else if (noTelp.length() < 10) {
+                System.out.println("Nomor telepon harus terdiri dari minimal 10 digit. Silakan masukkan nomor telepon yang valid.");
+            } else {
+                break;
+            }
         }
-        }
 
-        System.out.print("Alamat: ");
-        String alamat = input.nextLine();
+        String alamat;
         while (true) {
             System.out.print("Alamat: ");
             alamat = input.nextLine().trim();
@@ -151,7 +152,12 @@ public class Main {
         while (true) {
             try {
                 System.out.print("Tanggal Kunjungan (yyyy-mm-dd): ");
-                tanggalKunjungan = LocalDate.parse(input.nextLine());
+                String inputTanggal = input.nextLine().trim();
+                if (inputTanggal.isEmpty()) {
+                    System.out.println("Tanggal kunjungan tidak boleh kosong.");
+                    continue;
+                }
+                tanggalKunjungan = LocalDate.parse(inputTanggal);
                 break;
             } catch (DateTimeParseException e) {
                 System.out.println("Format tanggal tidak valid. Contoh: 2024-05-30");
@@ -163,7 +169,9 @@ public class Main {
             System.out.print("Keluhan: ");
             keluhan = input.nextLine().trim();
             if (keluhan.isEmpty()) {
-                System.out.println("keluhan tidak boleh kosong");
+                System.out.println("Keluhan tidak boleh kosong");
+            } else if (!nama.matches("[a-zA-Z\\s]+")) {
+                System.out.println("Keluhan hanya boleh mengandung huruf dan spasi. Masukkan keluhan anda."); 
             } else {
                 break;
             }
