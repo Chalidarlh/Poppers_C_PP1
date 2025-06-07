@@ -148,6 +148,31 @@ public class Main {
                 break;
             }
         }
+
+        String Alamat;
+        while (true) {
+            System.out.print("Alamat: ");
+            Alamat = input.nextLine().trim();
+            if (Alamat.isEmpty()) {
+                System.out.println("Alamat tidak boleh kosong. Silahkan masukkan alamat yang valid");
+            } else {
+                break;
+            }
+        }
+
+        String nomorTelepon;
+        while (true) {
+        System.out.print("Nomor Telepon: ");
+        nomorTelepon = input.nextLine().trim();
+
+        if (nomorTelepon.isEmpty()) {
+            System.out.println("Nomor telepon tidak boleh kosong. Silakan masukkan nomorTelepon; telepon yang valid.");
+        } else if (nomorTelepon.length() < 10) {
+            System.out.println("Nomor telepon harus terdiri dari minimal 10 digit. Silakan masukkan nomorTelepon; telepon yang valid.");
+        } else {
+            break;
+        }
+    }
         
         return new Pasien(nama, tanggalLahir, jk, usia, noTelp, alamat, tanggalKunjungan, keluhan);
     }
