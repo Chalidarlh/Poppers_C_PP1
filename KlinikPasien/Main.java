@@ -116,7 +116,7 @@ public class Main {
                     break;
                 }
             }catch (NumberFormatException e) {
-                System.out.print("Usia harus berupa angka. Silahkan coba lagi. ");
+                System.out.println("Usia harus berupa angka. Silahkan coba lagi. ");
             }
         }
 
