@@ -76,7 +76,8 @@ public class ListPasien {
                 String keluhan = parts[8];
                 String statusPasien = parts[9];
 
-                Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan,keluhan);
+                Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan,
+                        keluhan);
                 addTailTanpaSimpan(p);
 
             }
@@ -244,7 +245,6 @@ public class ListPasien {
                 System.out.println("Alamat            : " + p.getAlamat());
                 System.out.println("Tanggal Kunjungan : " + p.getTanggalKunjungan());
                 System.out.println("Keluhan           : " + p.getKeluhan());
-                System.out.println("Status Pasien     : " + p.getStatusPasien());
                 System.out.println("--------------------------------------");
                 ditemukan = true;
             }
