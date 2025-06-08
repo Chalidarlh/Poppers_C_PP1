@@ -10,17 +10,18 @@ public class Node {
 		this.data = data;
 	}
 
-    public Node() {
-    }
 	public void setData(Pasien data) {
 		this.data = data;
 	}
+
 	public Pasien getData() {
 		return data;
 	}
+
 	public void setNext(Node next) {
 		this.next = next;
 	}
+	
 	public Node getNext() {
 		return next;
 	}

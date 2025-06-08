@@ -101,43 +101,6 @@ public class ListPasien {
         }
     }
 
-    public void addHead(Pasien data) {
-        Node newNode = new Node(data);
-        if (isEmpty()) {
-            HEAD = newNode;
-        } else {
-            newNode.setNext(HEAD);
-            HEAD = newNode;
-        }
-        simpanSemuaKeFile();
-    }
-
-    public void addMid(Pasien data, int position) {
-        Node posNode = null, curNode = null;
-        int i;
-
-        Node newNode = new Node(data);
-        if (isEmpty()) {
-            HEAD = newNode;
-        } else {
-            curNode = HEAD;
-            if (position == 1) {
-                newNode.setNext(curNode);
-                HEAD = newNode;
-            } else {
-                i = 1;
-                while (curNode != null && i < position) {
-                    posNode = curNode;
-                    curNode = curNode.getNext();
-                    i++;
-                }
-                posNode.setNext(newNode);
-                newNode.setNext(curNode);
-            }
-        }
-        simpanSemuaKeFile();
-    }
-
     public void addTail(Pasien data) {
         Node posNode = null, curNode = null;
 
@@ -159,17 +122,6 @@ public class ListPasien {
     private void dispose(Node node) {
         node.setNext(null);
         node = null;
-    }
-
-    public void removeHead() {
-        if (isEmpty()) {
-            System.out.println("List is empty");
-        } else {
-            Node temp = HEAD;
-            HEAD = HEAD.getNext();
-            dispose(temp);
-            simpanUlangFile();
-        }
     }
 
     public void removeMid(String nama, int usia, String alamat) {
@@ -201,24 +153,6 @@ public class ListPasien {
         }
 
         System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
-    }
-
-    public void removeTail() {
-        if (isEmpty()) {
-            System.out.println("List is empty");
-        } else {
-            Node lastNode = HEAD;
-            Node preNode = null;
-
-            while (lastNode.getNext() != null) {
-                preNode = lastNode;
-                lastNode = lastNode.getNext();
-            }
-
-            preNode.setNext(null);
-            dispose(lastNode);
-            simpanUlangFile();
-        }
     }
 
     public int count() {
@@ -257,19 +191,6 @@ public class ListPasien {
         }
     }
 
-    public void displayElement() {
-        if (isEmpty()) {
-            System.out.println("List Kosong");
-        } else {
-            Node curNode = HEAD;
-            while (curNode != null) {
-                System.out.println(curNode.getData());
-                curNode = curNode.getNext();
-            }
-        }
-        System.out.println();
-    }
-
     public void updatePasien(String nama, int usia, String alamat, Pasien newData) {
         Node curNode = HEAD;
         boolean ditemukan = false;
@@ -297,6 +218,7 @@ public class ListPasien {
             System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
         }
     }
+    
     public static void tampilkanMenu() {
         System.out.println("\n=== MENU KLINIK PASIEN ===");
         System.out.println("1. Tambah Pasien");
@@ -307,5 +229,18 @@ public class ListPasien {
         System.out.println("6. Hitung Jumlah Pasien");
         System.out.println("0. Keluar");
         System.out.print("Pilihan Anda: ");
+    }
+
+    public void displayElement() {
+        if (isEmpty()) {
+            System.out.println("List Kosong");
+        } else {
+            Node curNode = HEAD;
+            while (curNode != null) {
+                System.out.println(curNode.getData());
+                curNode = curNode.getNext();
+            }
+        }
+        System.out.println();
     }
 }

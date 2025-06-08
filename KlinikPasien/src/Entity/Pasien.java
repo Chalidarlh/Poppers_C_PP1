@@ -98,6 +98,7 @@ public class Pasien {
     public void setKeluhan(String keluhan) {
         this.keluhan = keluhan;
     }
+    
     public String toString() {
         return id + " " + nama + " " + tanggalLahir + " " + jenisKelamin + " " + usia + " " + nomorTelepon + " " + alamat + " " + tanggalKunjungan + " " + keluhan;
     }

@@ -1,10 +1,11 @@
 1,chalida,2005-03-01,perempuan,27,085722067843,dago,2022-12-12,pusing
-1,nuy,2007-09-08,perempuan,14,089765,gbi,2007-09-04,sakit
-1,nobita,2004-07-02,laki-laki,25,0876543278,kopo,2022-09-01,diare
-1,nuy,2004-12-30,perempuan,20,089,bandung,2025-03-31,sehat
-1,Reza,2004-12-12,laki-laki,20,08,Bdg,2025-12-12,Sakit
-1,chalida rahma,2005-05-29,perempuan,20,0897654321,bandung,2022-09-08,sakit
-1,nada,2005-07-09,perempuan,21,08976215689,cimahi,2025-01-02,sehat
-1,Suneo,2003-09-23,laki-laki,23,08999999900,jepang,2023-11-12,tipes
-1,ucup,2003-09-09,laki-laki,23,1234567898,Bandung,2024-09-09,Parongpong
-1,nurul,2003-09-08,perempuan,21,089999999999,dago,2023-02-01,demam
+2,nuy,2007-09-08,perempuan,14,089765,gbi,2007-09-04,sakit
+3,nobita,2004-07-02,laki-laki,25,0876543278,kopo,2022-09-01,diare
+4,nuy,2004-12-30,perempuan,20,089,bandung,2025-03-31,sehat
+5,Reza,2004-12-12,laki-laki,20,08,Bdg,2025-12-12,Sakit
+6,chalida rahma,2005-05-29,perempuan,20,0897654321,bandung,2022-09-08,sakit
+7,nada,2005-07-09,perempuan,21,08976215689,cimahi,2025-01-02,sehat
+8,Suneo,2003-09-23,laki-laki,23,08999999900,jepang,2023-11-12,tipes
+9,ucup,2003-09-09,laki-laki,23,1234567898,Bandung,2024-09-09,Parongpong
+10,nurul,2003-09-08,perempuan,21,089999999999,dago,2023-02-01,demam
+11,put,2001-02-23,perempuan,20,0891234656788,bandung,2025-12-23,sakit
