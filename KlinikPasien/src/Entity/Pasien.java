@@ -3,7 +3,7 @@ package KlinikPasien.src.Entity;
 import java.time.LocalDate;
 
 public class Pasien {
-    private static int counter = 1;
+    private static int idAwal = 1;
     private int id;
     private String nama;
     private LocalDate tanggalLahir;
@@ -16,7 +16,7 @@ public class Pasien {
 
     public Pasien(String nama, LocalDate tanggalLahir, String jenisKelamin, int usia, String nomorTelepon,
             String alamat, LocalDate tanggalKunjungan, String keluhan) {
-        this.id = counter++;
+        this.id = idAwal++;
         this.nama = nama;
         this.tanggalLahir = tanggalLahir;
         this.jenisKelamin = jenisKelamin;
