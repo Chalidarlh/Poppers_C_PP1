@@ -35,7 +35,7 @@ public class ListPasien {
                 current = current.getNext();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Gagal menyimpan ke file: " + e.getMessage());
         }
     }
 
@@ -77,7 +77,7 @@ public class ListPasien {
                 String alamat = parts[6];
                 LocalDate tanggalKunjungan = LocalDate.parse(parts[7]);
                 String keluhan = parts[8];
-                
+
                 Pasien p = new Pasien(nama, tanggalLahir, jenisKelamin, usia, nomorTelepon, alamat, tanggalKunjungan,
                         keluhan);
                 addTailTanpaSimpan(p);
@@ -218,7 +218,7 @@ public class ListPasien {
             System.out.println("Pasien dengan nama " + nama + " tidak ditemukan.");
         }
     }
-    
+
     public static void tampilkanMenu() {
         System.out.println("\n=== MENU KLINIK PASIEN ===");
         System.out.println("1. Tambah Pasien");

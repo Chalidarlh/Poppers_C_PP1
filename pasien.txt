@@ -8,4 +8,5 @@
 8,Suneo,2003-09-23,laki-laki,23,08999999900,jepang,2023-11-12,tipes
 9,ucup,2003-09-09,laki-laki,23,1234567898,Bandung,2024-09-09,Parongpong
 10,nurul,2003-09-08,perempuan,21,089999999999,dago,2023-02-01,demam
-11,put,2001-02-23,perempuan,20,0891234656788,bandung,2025-12-23,sakit
+11,nad,2004-03-23,laki-laki,21,0891234567,bandung barat,2025-02-28,pusing
+14,put,2001-02-23,perempuan,20,089123456788,bandung,2025-12-23,sakit
