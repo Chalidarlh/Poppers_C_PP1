@@ -101,17 +101,26 @@ public class Main {
         String jk;
         while (true) {
             System.out.print("Jenis Kelamin (laki-laki/perempuan): ");
-            jk = input.nextLine().toLowerCase();
-            if (jk.equals("laki-laki") || jk.equals("perempuan")) {
+            jk = input.nextLine().trim().toLowerCase();
+            if (jk.isEmpty()) {
+                System.out.println("Input tidak boleh kosong. Silakan isi jenis kelamin.");
+            } else if (jk.equals("laki-laki") || jk.equals("perempuan")) {
                 break;
             } else {
-                System.out.println("Masukkan hanya 'laki-laki' atau 'perempuan'");
+                System.out.println("Masukkan hanya 'laki-laki' atau 'perempuan'.");
             }
         }
 
         int usia;
         while (true) {
             System.out.print("Usia: ");
+            String inputUsia = input.nextLine().trim();
+
+            if (inputUsia.isEmpty()) {
+                System.out.println("Usia tidak boleh kosong. Silakan isi usia.");
+                continue;
+            }
+            
             try {
                 usia = Integer.parseInt(input.nextLine());
                 if (usia < 0 || usia > 100) {
