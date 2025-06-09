@@ -16,7 +16,7 @@ public class Main {
         do {
             ListPasien.tampilkanMenu();
             pilihan = input.nextInt();
-            input.nextLine(); // clear newline
+            input.nextLine();
 
             switch (pilihan) {
                 case 1:

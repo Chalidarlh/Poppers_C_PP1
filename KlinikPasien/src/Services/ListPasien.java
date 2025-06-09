@@ -137,10 +137,8 @@ public class ListPasien {
             if (tempNode.getData().getNama().equals(nama) && tempNode.getData().getUsia() == usia
                     && tempNode.getData().getAlamat().equals(alamat)) {
                 if (preNode == null) {
-                    // Data berada di head
                     HEAD = tempNode.getNext();
                 } else {
-                    // Data berada di tengah/akhir
                     preNode.setNext(tempNode.getNext());
                 }
                 dispose(tempNode);
@@ -197,7 +195,6 @@ public class ListPasien {
         while (curNode != null) {
             Pasien p = curNode.getData();
             if (p.getNama().equalsIgnoreCase(nama) && p.getUsia() == usia && p.getAlamat().equalsIgnoreCase(alamat)) {
-                // Ganti field satu per satu (ID tetap sama)
                 p.setNama(newData.getNama());
                 p.setTanggalLahir(newData.getTanggalLahir());
                 p.setJenisKelamin(newData.getJenisKelamin());
@@ -209,7 +206,7 @@ public class ListPasien {
 
                 System.out.println("Pasien dengan nama: " + nama + " berhasil diupdate.");
                 ditemukan = true;
-                simpanUlangFile(); // simpan seluruh data list ke file
+                simpanUlangFile();
                 break;
             }
             curNode = curNode.getNext();
